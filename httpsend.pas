@@ -678,6 +678,8 @@ begin
           if Pos('CONNECTION:', su) = 1 then
             if Pos('CLOSE', su) > 0 then
               ToClose := True;
+            if Pos('UPGRADE', su) >0 then
+               ToClose:=False;
         end;
       end;
     finally
@@ -696,8 +698,7 @@ begin
 
   {if need receive response body, read it}
   Receiving := Method <> 'HEAD';
-  Receiving := Receiving and (FResultCode <> 204);
-  Receiving := Receiving and (FResultCode <> 304);
+  Receiving := Receiving and (FResultCode <> 204) and (FResultCode <> 304) and (FResultCode<>101);
   if Receiving then
     case FTransferEncoding of
       TE_UNKNOWN:
