@@ -1,18 +1,5 @@
-# (Ararat) Synapse TCP/IP library for Pascal
+# (Ararat) Synapse TCP/IP library for Pascal (+websocket support)
 Official source repository is https://github.com/geby/synapse (It was changed from SourceForge at January 2024)
-
-This opensource library is my freetime hobby. You can reward me by any donation, thank you!
-
-[![Paypal donate](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/donate/?hosted_button_id=8APS698SPM2VQ) or use https://paypal.me/gebauerl
-
-### About
-This project deals with network communication by means of blocking sockets (with limited non-blocking mode) on Windows, Linux, Android and on many POSIX based systems. This project not using asynchronous sockets! The Project contains simple low level non-visual classes in set of units for easiest programming.
-
-Blocking mode is more natural in pre-emptive multitasking and multithreading environment. Synchronous mode (called 'blocking' in Winsock terminology) features acting thread waits until the needed operation terminates. When we want to send data, the program exits function only after data is sent - or - if we want to receive data, the program exits the function only after the desired data is received.
-
-Thus, much more crisp and simple programming is achieved. You especially feel it when trying to implement any Internet protocol, which is typically based on 'send-wait for reply' method. If you want to implement it in an asynchronous method, you would have to accept complicated event processing and synchronous mode simulation. Therefore a synchronous socket is simple and natural for the majority programming tasks. No required multithread synchronisation, no need for windows message processing... Great for command line utilities, visual projects, services, simple servers...
-
-You can found here addition to Synapse project called **SynaSer**, too. This is library for blocking communication on serial ports (COM). It is non-visual class as in Synapse, and API is very similar to Synapse.
  
 ### Compatibility
 * **Delphi 5 - 2007** (ANSI, Win32)
